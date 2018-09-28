@@ -27,8 +27,9 @@ router.get('/', (req, res, next) => {
     headers: {'X-CoinAPI-Key': '8910FE5C-E094-41E5-83A3-18AEBBDF5E46'}
   });
 
-  Promise.all([BTCRequest,ETHRequest,LTCRequest,TRXRequest]).then( values => {
-    console.log(values.map(v => v.data));
+  Promise.all([BTCRequest,ETHRequest,LTCRequest,TRXRequest]).then(values => {
+    const cryptos = values.map(v => v.data);
+    res.json(cryptos);
   });
 });
 
