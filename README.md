@@ -2,3 +2,4 @@
 
 nvm use
 yarn install
+yarn start
