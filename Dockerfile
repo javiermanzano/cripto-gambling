@@ -18,6 +18,9 @@ RUN npm install -g nodemon
 # Install dependencies (if any) in package.json
 RUN npm install
 
+# Bundle app source
+COPY . /usr/src/app
+
 # Expose port from container so host can access $PORT
 EXPOSE 4000
 # Start the Node.js app on load
